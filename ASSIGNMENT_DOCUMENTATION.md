@@ -337,7 +337,7 @@ Synchronization mechanisms must work correctly under all conditions, not just on
 ### What I learned about synchronization:
 
 [6-8 sentences about key concepts, challenges, insights]
-
+Synchronization is essential in multithreaded systems to ensure correct and predictable behavior when multiple threads access shared resources. I learned how race conditions occur when threads access shared variables without proper coordination, leading to inconsistent results. Using ReentrantLock helped me understand how mutual exclusion works to protect critical sections. I also learned how semaphores can be used to control access to limited resources such as a CPU.One important lesson was the necessity of using try-finally blocks to ensure locks are always released, preventing deadlocks. Additionally, I understood the difference between protecting data (locks) and controlling access (semaphores). Overall, this assignment improved my understanding of concurrency control and its importance in operating systems.
 ---
 
 ### Real-world applications:
@@ -345,44 +345,50 @@ Synchronization mechanisms must work correctly under all conditions, not just on
 Give TWO examples where synchronization is critical:
 
 **Example 1**: 
-
+In banking systems, synchronization is required when multiple users access the same account. Without proper locking, concurrent withdrawals could lead to incorrect balances.
 **Example 2**: 
-
+In operating systems, CPU scheduling requires synchronization to ensure that only a limited number of processes access the CPU at a time, similar to how the semaphore was used in this assignment.
 ---
 
 ### How I would explain synchronization to others:
 
 [Explain to someone who just finished Assignment 1 - use simple terms and analogies]
-
+Synchronization can be explained as a way to organize access to shared resources so that multiple threads do not interfere with each other. For example, imagine a single bathroom shared by many people. Only one person can use it at a time, so a lock is used to ensure exclusive access. Similarly, in programming, locks ensure that only one thread modifies shared data at a time. Semaphores are like allowing a limited number of people into a room at once. This concept helps prevent errors and ensures that programs behave correctly even when multiple threads run concurrently.
 ---
 
 ## Part 6: GitHub Repository Information
 
-**Repository URL**: 
+**Repository URL**: https://github.com/LenaAltwaim/OS-Assignment3-Lena-Altwaim.git
 
-**Number of commits**: 
+**Number of commits**: 10
 
 **Commit messages**: 
-1. 
-2. 
-3. 
-4. 
+1. student id changed : 445052077
+2. Lock and Semaphore Added for synchronization and import packages
+3. Protect shared counter ( contextSwitchCount++) using ReentantLock named lock and release
+4. protect the shared virable (completedProcessCount) using ReetantLock lock and finally release the lock to prevent deadlock
+5. protect shared variable totalWaitingTime using Reentlock
+6. protecting executionLog
+7. Use semaphore to control CPU acsess in process execution and in the finally block its released
+8. Apply semaphore in runTo Completin method
+9. Answering assignment doc
+10. finishing Assignment doc
 
 ---
 
 ## Summary
 
 **Total time spent on assignment**: 
-
+7-8 hours
 **Key takeaways**: 
-1. 
-2. 
-3. 
+1. Synchronization is necessary to prevent race conditions in multithreaded systems.
+2. Locks provide mutual exclusion, while semaphores control access to resources.
+3. Proper use of try-finally blocks prevents deadlocks and ensures system stability.
 
 **Most challenging aspect**: 
-
+Understanding how race conditions occur and identifying all critical sections in the code.
 **What I'm most proud of**: 
-
+Successfully implementing synchronization mechanisms and ensuring the program runs correctly and consistently without errors.
 ---
 
 **End of Documentation**
